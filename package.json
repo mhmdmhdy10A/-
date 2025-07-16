@@ -1,0 +1,12 @@
+{
+  "name": "minecraft-bot-24h",
+  "version": "1.0.0",
+  "description": "Minecraft AFK bot stays online 24/7",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "mineflayer": "^4.15.0"
+  }
+}

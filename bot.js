@@ -4,7 +4,7 @@ function createBot() {
   const bot = mineflayer.createBot({
     host: process.env.MC_HOST || 'emerald.magmanode.com',
     port: parseInt(process.env.MC_PORT) || 33815,
-    username: process.env.MC_USER || 'AFK_Bot_24h'
+    username: process.env.MC_USER || 'AFK_Bot_7772'
   });
 
   bot.on('spawn', () => {

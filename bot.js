@@ -9,12 +9,22 @@ function createBot() {
 
   bot.on('spawn', () => {
     console.log('✅ Bot joined the server');
-    bot.chat('سلام! البوت شغال 24 ساعة.');
+    bot.chat('السلام عليكم! أنا بوت أفك شغال 24/7 🚀');
+
+    // حركة بسيطة كل 60 ثانية حتى ما يُطرد
+    setInterval(() => {
+      bot.setControlState('jump', true);
+      setTimeout(() => bot.setControlState('jump', false), 500);
+    }, 60000); // كل دقيقة يقفز مرة
   });
 
   bot.on('end', () => {
     console.log('❌ Bot disconnected, reconnecting in 10 seconds...');
     setTimeout(createBot, 10000);
+  });
+
+  bot.on('kicked', reason => {
+    console.log('⛔ Bot kicked:', reason);
   });
 
   bot.on('error', (err) => console.error('⚠️ Error:', err));
